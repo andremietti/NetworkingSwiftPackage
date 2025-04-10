@@ -10,7 +10,7 @@ import Foundation
 extension APIEndPoints: EndPointType {
     
     var baseURL: URL {
-        return URL(string: "https://rickandmortyapi.com/api/")!
+        return URL(string: "https://rickandmortyapi.com/api")!
     }
     
     var path: String {
@@ -38,11 +38,11 @@ extension APIEndPoints: EndPointType {
     var task: HTTPTask<Int> {
         switch self {
         case .charactersAlive(let page):
-            return .requestParameters(bodyParameters: nil, urlParameters: ["status": "alive", "page": "\(page)"])
+            return .requestParameters(urlParameters: ["status": "alive", "page": "\(page)"])
         case .charactersDead(let page):
-            return .requestParameters(bodyParameters: nil, urlParameters: ["status": "dead", "page": "\(page)"])
+            return .requestParameters(urlParameters: ["status": "dead", "page": "\(page)"])
         case .charactersAlien(let page):
-            return .requestParameters(bodyParameters: nil, urlParameters: ["status": "alien", "page": "\(page)"])
+            return .requestParameters(urlParameters: ["status": "alien", "page": "\(page)"])
         default:
             return .request
         }
