@@ -11,7 +11,7 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     
     private var task: URLSessionTask?
     
-    func request(_ route: EndPoint) async throws -> (data: Data, response: URLResponse) {
+    public func request(_ route: EndPoint) async throws -> (data: Data, response: URLResponse) {
         let session = URLSession.shared
         
         do {
