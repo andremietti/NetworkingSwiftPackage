@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol EndPointType {
+public protocol EndPointType {
     associatedtype T: Codable
     var baseURL: URL {get}
     var path: String {get}

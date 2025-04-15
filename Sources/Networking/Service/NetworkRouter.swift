@@ -9,7 +9,7 @@ import Foundation
 
 public typealias NetworkRouterCompletion = (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void
 
-protocol NetworkRouter {
+public protocol NetworkRouter {
     associatedtype EndPoint: EndPointType
 //    func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion)
     func request(_ route: EndPoint) async throws -> (data: Data, response: URLResponse)
